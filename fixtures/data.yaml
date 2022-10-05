@@ -1,0 +1,16 @@
+App\Entity\Specie:
+  specie_{1..8}:
+    name: '<userName()>'
+
+App\Entity\Farm:
+  farm_{1..4}:
+    name: '<company()>'
+    farmOwner:  '<name()>'
+
+App\Entity\Animal:
+  animal_{1..100}:
+    specie: '@specie_*'
+    farm: '@farm_*'
+    isSick: '<boolean(90)>'
+    birth: <dateTimeBetween("-356 days", "now")>
+    death: '85%? <dateTimeBetween($birth, "now")>'
